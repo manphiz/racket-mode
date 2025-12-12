@@ -345,7 +345,8 @@ A discussion of the information provided by a Racket language:
        (setq-local buffer-read-only nil))
       (t
        (prog-mode) ;wipes all local variables including buffer-read-only
-       (message "hash-lang support not available; needs newer syntax-color-lib")))))  )
+       (racket--log-warning "hash-lang support not available; needs newer syntax-color-lib"
+                            '(hash-lang))))))  )
 
 (defun racket--hash-lang-delete ()
   (when racket--hash-lang-id
