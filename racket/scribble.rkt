@@ -17,7 +17,6 @@
          scribble/xref
          scribble/tag
          setup/main-doc
-         version/utils
          "define-fallbacks.rkt"
          "lib-pkg.rkt"
          "util.rkt"
@@ -282,7 +281,7 @@
       [(module-path-index-desc? desc)
        (define pkg-sort (lib-pkg-sort (string->symbol term)))
        (values "module" "" "" pkg-sort 0)]
-      [else
+       [else
        (define pkg-sort (lib-pkg-sort #f))
        (values "documentation" (doc-from) "" pkg-sort 0)]))
   (list term sort-order what from fams pkg-sort path anchor))

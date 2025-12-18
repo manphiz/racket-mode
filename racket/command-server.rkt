@@ -10,15 +10,12 @@
          "debug.rkt"
          "elisp.rkt"
          (only-in "instrument.rkt" get-uncovered get-profile)
-         "hash-lang-bridge.rkt"
+         "hash-lang-channel.rkt"
          "logger.rkt"
-         "package.rkt"
+         "package-channel.rkt"
          "repl.rkt"
          "repl-output.rkt"
          "repl-session.rkt"
-         (only-in "scribble.rkt"
-                  bluebox-command
-                  doc-search)
          "util.rkt")
 
 (lazy-require
@@ -29,7 +26,13 @@
  ["commands/macro.rkt"        (macro-stepper macro-stepper/next)]
  ["commands/requires.rkt"     (requires/tidy requires/trim requires/base)]
  ["commands/module-names.rkt" (module-names)]
- ["find.rkt"                  (find-definition find-definition/drracket-jump)])
+ ["find.rkt"                  (find-definition find-definition/drracket-jump)]
+ ["hash-lang-bridge.rkt"      (hash-lang)]
+ ["package-.rkt"              (package-list
+                               package-details
+                               package-op
+                               catalog-package-doc-link)]
+ ["scribble.rkt"              (bluebox-command doc-search)])
 
 (provide command-server-loop)
 

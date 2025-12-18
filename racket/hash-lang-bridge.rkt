@@ -8,6 +8,7 @@
          racket/match
          racket/runtime-path
          "elisp.rkt"
+         "hash-lang-channel.rkt"
          "lang-info.rkt"
          "util.rkt")
 
@@ -89,8 +90,6 @@
      (get-tokens id gen from upto)]
     [`(submit-predicate ,id ,str ,eos?)
      (submit-predicate id str eos?)]))
-
-(define hash-lang-notify-channel (make-async-channel))
 
 (define ht (make-hash)) ;id => hash-lang%
 (define (get-object id)
